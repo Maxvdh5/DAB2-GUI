@@ -19,3 +19,10 @@ void PopupMessage::loginIncorrect()
     messageBox.critical(0,"Error","Gebruikersnaam of wachtwoord incorrect");
     messageBox.setFixedSize(500,200);
 }
+
+void PopupMessage::dubDrivers()
+{
+    QMessageBox messageBox;
+    messageBox.critical(0,"Error","A driver is selected for multiple positions");
+    messageBox.setFixedSize(500,200);
+}

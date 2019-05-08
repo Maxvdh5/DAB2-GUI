@@ -11,6 +11,7 @@
 #include <QSqlQueryModel>
 #include <QLabel>
 #include <QLineEdit>
+#include <QComboBox>
 
 
 namespace Ui {
@@ -28,10 +29,14 @@ public:
     void checkConnection();
     void fillLineEdit(int);
     void setRacers(QString name);
+    QString setData(QString query);
+    QStringList setListData(QString query);
+
+    bool checkResult();
+    int newRace();
 
 
 private slots:
-    void on_pushButton_clicked();
 
     void on_Home_clicked();
 
@@ -55,13 +60,25 @@ private slots:
 
     void on_cbRacers_currentIndexChanged(const QString &arg1);
 
+    void on_pbinrace_clicked();
+
+    void on_pbGoBack_clicked();
+
+    void on_pInsert_clicked();
+
+    void on_pbDelete_clicked();
+
 private:
     Ui::MainWindow *ui;
     SQL sqlHandeler;
     PopupMessage pop;
+    int val;
 
     std::array<QLabel*, 6> labels;
     std::array<QLineEdit*, 6> inputs;
+    std::array<QComboBox*, 20> Result;
+    std::array<QComboBox*, 20> Finish;
+    std::array<QLabel*, 2> country;
 };
 
 #endif // MAINWINDOW_H

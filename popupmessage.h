@@ -9,6 +9,7 @@ public:
 
     void loginMessage();
     void loginIncorrect();
+    void dubDrivers();
 };
 
 #endif // POPUPMESSAGE_H
